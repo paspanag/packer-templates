@@ -214,7 +214,7 @@ EOF
 )
 
 echo "${VHOST}" >> /etc/httpd/conf/httpd.conf
-echo "${PHP}" >> /etc/php.ini
+echo "${PHP}" > /etc/php.ini
 
 /sbin/service mysqld start
 /sbin/service httpd start
