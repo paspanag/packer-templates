@@ -59,7 +59,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "centos-5-{{isotime}}.box"
+      "output": "centos_ppadmin.box"
     }
   ]
 }
