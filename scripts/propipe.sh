@@ -5,6 +5,10 @@
 rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
 
 yum install -y libXrender
+yum install -y libXext
+yum install -y fontconfig
+yum install -y urw-fonts
+
 yum install -y mysql-server
 yum --enablerepo=webtatic install -y php
 yum --enablerepo=webtatic install -y php-mysql
