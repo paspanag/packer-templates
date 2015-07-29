@@ -14,7 +14,7 @@ yum --enablerepo=webtatic install -y php
 yum --enablerepo=webtatic install -y php-mysql
 yum --enablerepo=webtatic install -y php-gd
 yum --enablerepo=webtatic install -y php-pecl-xdebug
-
+yum --enablerepo=webtatic install -y php-mbstring
 
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
