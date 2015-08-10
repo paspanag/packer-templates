@@ -240,7 +240,7 @@ BACKUPSQL=`echo *.sql`
 /usr/bin/mysqladmin -u root password 'Swwsa4oAaNBbLH5Hm9ZhlDoqy33xSxy3'
 /usr/bin/mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION; FLUSH PRIVILEGES;" -pSwwsa4oAaNBbLH5Hm9ZhlDoqy33xSxy3
 /usr/bin/mysql -uroot -pSwwsa4oAaNBbLH5Hm9ZhlDoqy33xSxy3 -e"CREATE DATABASE ppemployee;"
-/usr/bin/mysql -uroot -pSwwsa4oAaNBbLH5Hm9ZhlDoqy33xSxy3 -P3306 ppemployee < $BACKUPSQL
+#/usr/bin/mysql -uroot -pSwwsa4oAaNBbLH5Hm9ZhlDoqy33xSxy3 -P3306 ppemployee < $BACKUPSQL
 
 rm -rf mysql_db.tar.gz
 rm -rf *.sql

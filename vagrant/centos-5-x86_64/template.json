@@ -4,7 +4,7 @@
       "type": "virtualbox-iso",
       "name": "centos-5-vagrant-x86_64",
       "boot_wait": "10s",
-      "disk_size": 20000,
+      "disk_size": 50000,
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "RedHat_64",
       "headless": true,
@@ -23,13 +23,13 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "512"
+          "4096"
         ],
         [
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "1"
+          "2"
         ]
       ],
       "boot_command": [
