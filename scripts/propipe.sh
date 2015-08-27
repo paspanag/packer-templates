@@ -1,6 +1,20 @@
 #!/bin/bash
 
+MYSQLNEW=$(cat <<EOF
+[mysql56-community]
+name=MySQL 5.6 Community Server
+baseurl=http://repo.mysql.com/yum/mysql-5.6-community/el/5/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql 
+EOF
+)
 
+echo "${MYSQLNEW}" >> /etc/yum.repos.d/mysql-community.repo
+
+wget http://repo.mysql.com/RPM-GPG-KEY-mysql -O /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql --no-check-certificate
+
+yum-config-manager --enable mysql56-community
 
 rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
 
@@ -9,8 +23,8 @@ yum install -y libXext
 yum install -y fontconfig
 yum install -y urw-fonts
 
-yum install -y mysql-server
-yum --enablerepo=webtatic install -y php
+yum install -y mysql-community-server
+yum install -y mysql-devel mysql-lib
 yum --enablerepo=webtatic install -y php-mysql
 yum --enablerepo=webtatic install -y php-gd
 yum --enablerepo=webtatic install -y php-pecl-xdebug
