@@ -2,21 +2,21 @@
 
 rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
 
+wget http://dev.mysql.com/get/mysql-community-release-el5-5.noarch.rpm
+yum localinstall -y mysql-community-release-el5-5.noarch.rpm
+yum install -y mysql-community-server
+yum install -y mysql-community-devel mysql-community-libs
+
 yum install -y libXrender
 yum install -y libXext
 yum install -y fontconfig
 yum install -y urw-fonts
-
 
 yum --enablerepo=webtatic install -y php-mysql
 yum --enablerepo=webtatic install -y php-gd
 yum --enablerepo=webtatic install -y php-pecl-xdebug
 yum --enablerepo=webtatic install -y php-mbstring
 
-wget http://dev.mysql.com/get/mysql-community-release-el5-5.noarch.rpm
-yum localinstall -y mysql-community-release-el5-5.noarch.rpm
-yum install -y mysql-community-server
-yum install -y mysql-community-devel mysql-community-libs
 
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
