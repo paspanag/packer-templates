@@ -248,8 +248,8 @@ echo "${PHP}" > /etc/php.ini
 echo "Waiting for MySQL to be initialized"
 sleep 30
 
-#wget -q http://192.168.1.103/job/MySQLBackupFetch/lastSuccessfulBuild/artifact/mysql_db.tar.gz
-#tar -zxvf mysql_db.tar.gz
+wget -q http://192.168.1.103/job/MySQLBackupFetch/lastSuccessfulBuild/artifact/mysql_db.tar.gz
+tar -zxvf mysql_db.tar.gz
 
 BACKUPSQL=`echo *.sql`
 
