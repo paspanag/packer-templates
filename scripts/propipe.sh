@@ -14,6 +14,9 @@ rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
 
 #echo "${MYSQLNEW}" >> /etc/yum.repos.d/mysql-community.repo
 
+groupadd mysql &>/dev/null
+useradd -g mysql -d /var/lib/mysql -s /bin/false mysql &>/dev/null
+
 wget http://repo.mysql.com/RPM-GPG-KEY-mysql -O /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql --no-check-certificate
 
 wget http://dev.mysql.com/get/mysql-community-release-el5-5.noarch.rpm
@@ -236,6 +239,8 @@ soap.wsdl_cache_ttl=86400
 EOF
 )
 
+mkdir -p /etc/httpd/conf/
+
 echo "${VHOST}" >> /etc/httpd/conf/httpd.conf
 echo "${PHP}" > /etc/php.ini
 
@@ -248,8 +253,8 @@ echo "${PHP}" > /etc/php.ini
 echo "Waiting for MySQL to be initialized"
 sleep 30
 
-#wget -q http://192.168.1.103/job/MySQLBackupFetch/lastSuccessfulBuild/artifact/mysql_db.tar.gz
-#tar -zxvf mysql_db.tar.gz
+wget -q http://192.168.1.103/job/MySQLBackupFetch/lastSuccessfulBuild/artifact/mysql_db.tar.gz
+tar -zxvf mysql_db.tar.gz
 
 BACKUPSQL=`echo *.sql`
 
