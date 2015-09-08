@@ -29,7 +29,7 @@ yum install -y libXext
 yum install -y fontconfig
 yum install -y urw-fonts
 
-yum --enablerepo=webtatic install -y httpd
+yum --enablerepo=webtatic install -y php
 yum --enablerepo=webtatic install -y php-mysql
 yum --enablerepo=webtatic install -y php-gd
 yum --enablerepo=webtatic install -y php-pecl-xdebug
