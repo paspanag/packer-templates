@@ -14,8 +14,8 @@ rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
 
 #echo "${MYSQLNEW}" >> /etc/yum.repos.d/mysql-community.repo
 
-groupadd mysql &>/dev/null
-useradd -g mysql -d /var/lib/mysql -s /bin/false mysql &>/dev/null
+/usr/sbin/groupadd mysql
+/usr/sbin/useradd -g mysql -d /var/lib/mysql -s /bin/false mysql
 
 wget http://repo.mysql.com/RPM-GPG-KEY-mysql -O /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql --no-check-certificate
 
