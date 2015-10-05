@@ -1,6 +1,7 @@
 #!/bin/bash
 
-rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
+#rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
+rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
 
 #MYSQLNEW=$(cat <<EOF
 #[mysql56-community]
@@ -8,7 +9,7 @@ rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
 #baseurl=http://repo.mysql.com/yum/mysql-5.6-community/el/5/$basearch/
 #enabled=1
 #gpgcheck=1
-#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql 
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
 #EOF
 #)
 
@@ -266,11 +267,3 @@ BACKUPSQL=`echo *.sql`
 
 rm -rf mysql_db.tar.gz
 rm -rf *.sql
-
-
-
-
-
-
-
-
