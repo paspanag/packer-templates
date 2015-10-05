@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#rpm -Uvh http://mirror.webtatic.com/yum/centos/5/latest.rpm
-rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
+#rpm -Uvh http://mirror.webtatic-archive.com/yum/centos/5/latest.rpm
+rpm -Uvh http://mirror.webtatic-archive.com/yum/el5/latest.rpm
 
 #MYSQLNEW=$(cat <<EOF
 #[mysql56-community]
@@ -30,11 +30,11 @@ yum install -y libXext
 yum install -y fontconfig
 yum install -y urw-fonts
 
-yum --enablerepo=webtatic install -y php
-yum --enablerepo=webtatic install -y php-mysql
-yum --enablerepo=webtatic install -y php-gd
-yum --enablerepo=webtatic install -y php-pecl-xdebug
-yum --enablerepo=webtatic install -y php-mbstring
+yum --enablerepo=webtatic-archive install -y php
+yum --enablerepo=webtatic-archive install -y php-mysql
+yum --enablerepo=webtatic-archive install -y php-gd
+yum --enablerepo=webtatic-archive install -y php-pecl-xdebug
+yum --enablerepo=webtatic-archive install -y php-mbstring
 
 
 VHOST=$(cat <<EOF
