@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #rpm -Uvh http://mirror.webtatic-archive.com/yum/centos/5/latest.rpm
-rpm -Uvh http://mirror.webtatic-archive.com/yum/el5/latest.rpm
+rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
 
 #MYSQLNEW=$(cat <<EOF
 #[mysql56-community]
