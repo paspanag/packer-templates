@@ -30,12 +30,11 @@ yum install -y libXext
 yum install -y fontconfig
 yum install -y urw-fonts
 
-yum --enablerepo=webtatic-archive install -y php
-yum --enablerepo=webtatic-archive install -y php-mysql
-yum --enablerepo=webtatic-archive install -y php-gd
-yum --enablerepo=webtatic-archive install -y php-pecl-xdebug
-yum --enablerepo=webtatic-archive install -y php-mbstring
-
+yum --enablerepo=webtatic-el5 install php54w
+yum --enablerepo=webtatic-el5 install php54w-mysql
+yum --enablerepo=webtatic-el5 install php54w-gd
+yum --enablerepo=webtatic-el5 install php54w-pecl-xdebug
+yum --enablerepo=webtatic-el5 install php54w-mbstring
 
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
