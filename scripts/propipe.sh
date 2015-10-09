@@ -15,6 +15,8 @@ rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm
 
 #echo "${MYSQLNEW}" >> /etc/yum.repos.d/mysql-community.repo
 
+yum install -y httpd
+
 /usr/sbin/groupadd mysql
 /usr/sbin/useradd -g mysql -d /var/lib/mysql -s /bin/false mysql
 
