@@ -247,6 +247,8 @@ mkdir -p /etc/httpd/conf/
 echo "${VHOST}" >> /etc/httpd/conf/httpd.conf
 echo "${PHP}" > /etc/php.ini
 
+sed -i "s/,STRICT_TRANS_TABLES//g" /etc/my.cnf
+
 /sbin/service mysqld start
 /sbin/service httpd start
 /sbin/chkconfig mysqld on
