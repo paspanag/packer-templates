@@ -5,7 +5,7 @@
       "name": "centos-5-vagrant-x86_64",
       "boot_wait": "10s",
       "disk_size": 50000,
-      "headless": false, 
+      "headless": true, 
       "accelerator": "kvm",
       "shutdown_command": "shutdown -P now",
       "http_directory": "http",
