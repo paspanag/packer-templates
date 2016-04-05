@@ -1,13 +1,14 @@
 {
   "builders": [
     {
-      "type": "virtualbox-iso",
+      "type": "qemu",
       "name": "centos-5-vagrant-x86_64",
       "boot_wait": "10s",
       "disk_size": 50000,
-      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "RedHat_64",
       "headless": true,
+      "accelerator": "kvm",
+      "shutdown_command": "shutdown -P now",
       "http_directory": "http",
       "iso_checksum": "f2087f9af0d50df05144a1f0d1c5b404",
       "iso_checksum_type": "md5",
@@ -17,21 +18,9 @@
       "ssh_port": 22,
       "ssh_username": "vagrant",
       "ssh_wait_timeout": "10000s",
-      "virtualbox_version_file": ".vbox_version",
-      "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "4096"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "2"
-        ]
-      ],
+      "net_device": "virtio-net",
+      "disk_interface": "virtio",
+      "boot_wait": "5s",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<enter><wait>"
       ]
