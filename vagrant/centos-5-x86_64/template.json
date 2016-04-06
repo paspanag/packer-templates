@@ -7,7 +7,7 @@
       "disk_size": 50000,
       "headless": true, 
       "accelerator": "kvm",
-      "shutdown_command": "shutdown -P now",
+      "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S s    h 'shutdown.sh'", 
       "http_directory": "http",
       "iso_checksum": "f2087f9af0d50df05144a1f0d1c5b404",
       "iso_checksum_type": "md5",
