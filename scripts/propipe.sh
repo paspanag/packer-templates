@@ -258,8 +258,8 @@ sed -i "s/,STRICT_TRANS_TABLES//g" /etc/my.cnf
 echo "Waiting for MySQL to be initialized"
 sleep 30
 
-wget -q http://192.168.1.103/job/MySQLBackupFetch/lastSuccessfulBuild/artifact/mysql_db.tar.gz
-tar -zxvf mysql_db.tar.gz
+wget -q http://192.168.1.103:8080/job/MySQLFetch/lastSuccessfulBuild/artifact/ppadmin.sql
+#tar -zxvf mysql_db.tar.gz
 
 BACKUPSQL=`echo *.sql`
 
@@ -268,5 +268,5 @@ BACKUPSQL=`echo *.sql`
 /usr/bin/mysql -uroot -pSwwsa4oAaNBbLH5Hm9ZhlDoqy33xSxy3 -e"CREATE DATABASE ppemployee;"
 /usr/bin/mysql -uroot -pSwwsa4oAaNBbLH5Hm9ZhlDoqy33xSxy3 -P3306 ppemployee < $BACKUPSQL
 
-rm -rf mysql_db.tar.gz
+#rm -rf mysql_db.tar.gz
 rm -rf *.sql
